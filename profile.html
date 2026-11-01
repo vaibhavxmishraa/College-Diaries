@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your College Diaries student profile.">
+  <meta name="theme-color" content="#F7F3EB">
+  <title>My Profile — College Diaries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@9..144,500;9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="profile">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">CD</span><span class="brand-text"><span class="brand-name">College <em>Diaries</em></span><span class="brand-kicker">A campus yearbook</span></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open menu</span><span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a><a href="create-memory.html" data-nav="create">Share a Memory</a><a href="about.html" data-nav="about">About</a><a class="nav-login" id="auth-nav-link" href="login.html">Log in</a><button class="nav-logout" id="nav-logout" type="button" hidden>Log out</button>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="profile-page">
+    <section class="container profile-shell">
+      <p class="eyebrow"><span class="dash" aria-hidden="true"></span> Your corner of the yearbook</p>
+      <h1>My <em>profile</em></h1>
+      <p class="lede">A little about the person behind the memories.</p>
+      <div id="profile-loading" class="callout" role="status">Checking your account…</div>
+      <div id="profile-gate" class="auth-gate" hidden>
+        <h2>Sign in to see your profile</h2><p>Your profile belongs to your College Diaries account.</p><div class="button-row"><a class="btn btn-primary" href="login.html?next=profile.html">Sign in</a><a class="btn btn-secondary" href="login.html?mode=signup&amp;next=profile.html">Create account</a></div>
+      </div>
+      <div id="profile-content" class="profile-layout" hidden>
+        <aside class="profile-summary panel">
+          <div id="profile-avatar" class="profile-avatar" aria-label="Profile initials">CD</div>
+          <h2 id="profile-display-name">Student</h2>
+          <p id="profile-display-email" class="profile-email"></p>
+          <p id="profile-joined" class="profile-meta"></p>
+          <p id="profile-display-bio" class="profile-bio">Add a line about yourself.</p>
+          <div class="profile-facts"><span id="profile-display-branch">Department not added</span><span id="profile-display-year">Academic year not added</span></div>
+          <p class="profile-mode">Connection: <strong data-auth-mode>Checking…</strong></p>
+        </aside>
+        <section class="panel profile-editor">
+          <div class="section-heading"><p class="eyebrow"><span class="dash" aria-hidden="true"></span> Edit details</p><h2>Make it yours</h2><p class="lede">Your email is your account identity and cannot be changed here.</p></div>
+          <form id="profile-form" novalidate>
+            <div class="field"><label for="profile-name">Full name</label><input id="profile-name" name="name" type="text" minlength="2" maxlength="60" required autocomplete="name"></div>
+            <div class="field"><label for="profile-bio">Short bio</label><textarea id="profile-bio" name="bio" maxlength="240" rows="3" placeholder="A few words about your campus life…"></textarea><small>Up to 240 characters.</small></div>
+            <div class="field"><label for="profile-branch">Branch / department</label><input id="profile-branch" name="branch" type="text" maxlength="60" placeholder="e.g. CSE, AIML, ECE"></div>
+            <div class="field"><label for="profile-year">Academic year</label><select id="profile-year" name="year"><option value="">Not specified</option><option value="1">1st year</option><option value="2">2nd year</option><option value="3">3rd year</option><option value="4">4th year</option></select></div>
+            <div class="field"><label for="profile-avatar-url">Profile photo URL (optional)</label><input id="profile-avatar-url" name="avatarUrl" type="url" maxlength="500" placeholder="https://example.com/photo.jpg"><small>Use a public image URL. File uploads are not included yet.</small></div>
+            <p id="profile-message" class="auth-notice" role="status" hidden></p>
+            <button id="profile-save" class="btn btn-primary auth-submit" type="submit">Save profile</button>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p class="credit">College Diaries • Developed with love and memories by Vaibhav Mishra.</p></div></footer>
+  <script src="js/data.js"></script><script src="js/auth.js"></script><script src="js/main.js"></script><script src="js/profile.js"></script>
+</body>
+</html>

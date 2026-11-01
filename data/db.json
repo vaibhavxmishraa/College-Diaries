@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "user-demo",
+      "name": "Siraj",
+      "email": "demo@collegediaries.app",
+      "passwordHash": "scrypt$cf77fea90f7d9123ce12c36418149578$c4629cebaa9ea684c87aa27debc5b876c39932a7d2efd2318652c33bffea0f4b72192c4fe485702c5f7ef639c50d76120f3ea158098bd7e7bed04751b2d19a73",
+      "createdAt": "2026-10-26T17:50:59.682Z",
+      "bio": "B.Tech. || CSE Student",
+      "branch": "AIML",
+      "year": 2,
+      "avatarUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsayCCuhJ4-MjjmQnDVf_YxoWF14CaHxZ6ldQolYxGRQ&s=10"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "091c83f38e688add9dfcee65f8971b16e3acaf445d60cd6fd33e60ed76484bff",
+      "userId": "user-demo",
+      "createdAt": "2026-10-26T17:52:58.293Z",
+      "expiresAt": "2026-11-02T17:52:58.293Z"
+    }
+  ],
+  "memories": [],
+  "hods": [
+    {
+      "id": "hod-demo-cse",
+      "name": "Demo HOD",
+      "email": "hod.cse@collegediaries.app",
+      "department": "CSE",
+      "passwordHash": "scrypt$addf0fb4bbe86e369fe038237ea0b4a0$5eda248149872bd4c1cfe76dfa693be2c9e70f74f1d1fc386971ba592a4a235fa5486b975a91e424a55ef4132f6ba11dd8fb689e0accbea949fe62c3a0dbd19c",
+      "createdAt": "2026-10-26T17:50:59.646Z"
+    }
+  ],
+  "hodSessions": [
+    {
+      "token": "5044d5cd36e2eff90dafc849ac2d53ed8d08fec70e9996064ced1cc6311c9a19",
+      "hodId": "hod-demo-cse",
+      "createdAt": "2026-10-26T17:52:05.784Z",
+      "expiresAt": "2026-11-02T17:52:05.784Z"
+    }
+  ],
+  "messageRequests": [],
+  "messages": []
+}

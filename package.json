@@ -1,0 +1,13 @@
+{
+  "name": "college-diaries",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A warm digital yearbook with accounts and a small JSON-backed backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

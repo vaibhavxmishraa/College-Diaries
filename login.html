@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Log in or create a College Diaries account to keep your campus memories together.">
+  <meta name="theme-color" content="#F7F3EB">
+  <title>Log in — College Diaries</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236D2438'/%3E%3Cpath d='M8 9.2c2.2-1 4.2-.6 6 1 1.8-1.6 3.8-2 6-1v12.4c-2.2-1-4.2-.6-6 1-1.8-1.6-3.8-2-6-1V9.2z' fill='none' stroke='%23F7F3EB' stroke-width='1.4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none" focusable="false">
+            <path d="M6.5 8.2c2.7-1.3 5.1-.7 7.5 1.1 2.4-1.8 4.8-2.4 7.5-1.1v15.2c-2.7-1.3-5.1-.7-7.5 1.1-2.4-1.8-4.8-2.4-7.5-1.1V8.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M14 9.2v15.4" stroke="currentColor" stroke-width="1.7"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">College <em>Diaries</em></span>
+          <span class="brand-kicker">A campus yearbook</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="create-memory.html" data-nav="create">Share a Memory</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a class="nav-login" id="auth-nav-link" href="login.html">Log in</a>
+        <button class="nav-logout" id="nav-logout" type="button" hidden>Log out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="auth-section">
+      <div class="container auth-grid">
+        <div class="auth-story">
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span> The members’ entrance</p>
+          <h1>Keep your pages <em>signed.</em></h1>
+          <p class="tagline">Every campus has a story. Every memory deserves a place.</p>
+          <p class="lede">An account keeps your additions together under your name, and makes it clear which pages came from you. The sample yearbook stays open to everyone.</p>
+
+          <figure class="auth-photo" data-frame>
+            <img src="https://images.pexels.com/photos/7972534/pexels-photo-7972534.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400" width="1200" height="800" alt="College students walking and talking together on campus." data-fallback>
+            <figcaption>The pages we keep, and the people we keep them with.</figcaption>
+          </figure>
+
+          <ul class="auth-points">
+            <li><span class="auth-check" aria-hidden="true">✓</span> Your name stays attached to your pages.</li>
+            <li><span class="auth-check" aria-hidden="true">✓</span> Passwords are hashed, never stored as plain text.</li>
+            <li><span class="auth-check" aria-hidden="true">✓</span> Browsing the shelf never needs an account.</li>
+          </ul>
+        </div>
+
+        <div class="auth-side">
+          <div class="auth-mode" id="auth-mode">
+            <div class="auth-mode-top">
+              <span class="mode-dot" aria-hidden="true"></span>
+              <strong id="auth-mode-label">Checking the yearbook…</strong>
+            </div>
+            <p id="mode-copy-checking">Looking for the College Diaries backend.</p>
+            <p id="mode-copy-server" hidden>Connected to the Node backend. Your account and memories are saved in <code>data/db.json</code>.</p>
+            <p id="mode-copy-local" hidden>Browser preview mode. The Node backend is not running, so this account stays in this browser. Run <code>npm start</code> and open <code>http://localhost:3000</code> for backend accounts.</p>
+          </div>
+
+          <div class="auth-card">
+            <p id="auth-notice" class="auth-notice" role="status" hidden></p>
+            <p id="auth-checking" class="helper">Opening the members’ desk…</p>
+
+            <div id="auth-account" hidden>
+              <div class="account-heading">
+                <span class="account-avatar" id="account-initials" aria-hidden="true">CD</span>
+                <div>
+                  <p class="eyebrow">Signed in</p>
+                  <h2 id="account-name">Your account</h2>
+                  <p class="helper" id="account-email"></p>
+                </div>
+              </div>
+              <p class="auth-mode-copy">Connection: <strong data-auth-mode>Checking</strong></p>
+              <div class="button-row auth-account-actions">
+                <a id="continue-link" class="btn btn-primary" href="index.html#feed">Continue to memories</a>
+                <a class="btn btn-secondary" href="create-memory.html">Share a memory</a>
+              </div>
+              <button id="account-logout" class="text-button" type="button">Log out of this account</button>
+            </div>
+
+            <div id="auth-forms">
+              <div class="auth-tabs" role="tablist" aria-label="Account access">
+                <button id="signin-tab" class="auth-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="signin-form">Sign in</button>
+                <button id="signup-tab" class="auth-tab" type="button" role="tab" aria-selected="false" aria-controls="signup-form">Create account</button>
+              </div>
+
+              <form id="signin-form" class="auth-form" aria-labelledby="signin-heading" novalidate>
+                <div>
+                  <p class="eyebrow"><span class="dash" aria-hidden="true"></span> Welcome back</p>
+                  <h2 id="signin-heading">Open your diary</h2>
+                  <p class="helper">Sign in with the account you used to add pages.</p>
+                </div>
+                <div class="field">
+                  <label for="signin-email">Email</label>
+                  <input id="signin-email" name="email" type="email" autocomplete="email" required placeholder="you@college.edu">
+                </div>
+                <div class="field">
+                  <label for="signin-password">Password</label>
+                  <input id="signin-password" name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="Your password">
+                </div>
+                <p id="signin-error" class="auth-form-error" role="alert" hidden></p>
+                <button id="signin-submit" class="btn btn-primary auth-submit" type="submit">Sign in</button>
+              </form>
+
+              <form id="signup-form" class="auth-form" aria-labelledby="signup-heading" novalidate hidden>
+                <div>
+                  <p class="eyebrow"><span class="dash" aria-hidden="true"></span> A new signature</p>
+                  <h2 id="signup-heading">Start your diary</h2>
+                  <p class="helper">Create an account so your pages carry your name.</p>
+                </div>
+                <div class="field">
+                  <label for="signup-name">Full name</label>
+                  <input id="signup-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="60" required placeholder="Your full name">
+                </div>
+                <div class="field">
+                  <label for="signup-email">Email</label>
+                  <input id="signup-email" name="email" type="email" autocomplete="email" required placeholder="you@college.edu">
+                </div>
+                <div class="field">
+                  <label for="signup-password">Password</label>
+                  <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="200" required placeholder="At least 8 characters">
+                  <p class="helper">Use at least 8 characters. Browser preview accounts are for trying the flow, so do not reuse an important password.</p>
+                </div>
+                <div class="field">
+                  <label for="signup-confirm-password">Confirm password</label>
+                  <input id="signup-confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="200" required placeholder="Type the password again">
+                </div>
+                <p id="signup-error" class="auth-form-error" role="alert" hidden></p>
+                <button id="signup-submit" class="btn btn-primary auth-submit" type="submit">Create my account</button>
+              </form>
+
+              <div class="demo-note">
+                <div>
+                  <strong>Just looking around?</strong>
+                  <p>Use the demo student account. It works in both backend and preview modes.</p>
+                  <p class="demo-credentials"><span id="demo-email">demo@collegediaries.app</span> · <span id="demo-password">campus123</span></p>
+                </div>
+                <button id="demo-button" class="btn btn-ghost" type="button">Use demo account</button>
+              </div>
+            </div>
+
+            <p class="auth-small-print">Browsing memories is always public. Only adding a page asks for an account.</p>
+          </div>
+
+          <p class="auth-back"><a href="index.html">← Return to the yearbook without signing in</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div>
+          <p class="footer-name">College <em>Diaries</em></p>
+          <p class="footer-tagline">Every campus has a story. Every memory deserves a place.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="create-memory.html">Share a Memory</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <p class="credit">College Diaries • Developed with love and memories by Vaibhav Mishra.</p>
+      <p class="photo-note">Campus photographs from Pexels.</p>
+    </div>
+  </footer>
+  <div id="toast" class="toast" hidden role="status"></div>
+  <noscript>
+    <p class="container noscript callout">College Diaries needs JavaScript enabled to sign in.</p>
+  </noscript>
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth-page.js"></script>
+</body>
+</html>
